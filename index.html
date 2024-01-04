@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+	
+		<title>Console Formatter</title>
+		
+		<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+	
+	</head>
+  
+	<body>
+	
+		<div class="text-2xl">
+			<p>This demo uses Tailwind and Daisy UI</p>
+		</div>
+		
+		<!-- main content -->
+    <main>
+
+
+        <!------------------------------>
+        <!-- section: generic section -->
+        <section class="py-6">
+
+            <div class="container mx-auto px-6 sm:px-0 bg-base-200 rounded-2xl">
+
+                <!-------------------->
+                <!-- section header -->
+                <header class="p-6 pb-3">
+                    <div class="pb-3">
+                        <h2 class="text-4xl mr-4 pl-6 block md:inline font-bold text-primary">
+                            Console Formatter
+                        </h2>
+                        
+                    </div>
+                    <div class="glass h-3 shadow-none rounded-b-2xl"></div>
+                </header>
+                <!-- end section header -->
+                <!------------------------>
+
+                <!--------------------->
+                <!-- section content -->
+                <div class="p-6 pt-3">
+
+                    <div class="container mx-auto px-6 sm:px-0">
+
+                
+						<p class="text-2xl">Open the console to see the ConsoleFormatter in action.</p>
+                
+
+					</div>
+					
+                </div>
+                <!-- end section content -->
+                <!------------------------->
+
+            </div>
+
+        </section>
+        <!-- endsection: generic section -->
+        <!--------------------------------->
+
+
+    </main>
+    <!-- end main content -->
+
+	
+	</body>
+	
+	<script src="ConsoleFormatter.js"></script>
+	
+	<script>
+	
+	const CF = new ConsoleFormatter();
+
+        // ---------------------------
+        // using the console formatter
+        console.log('--- Using the console formatter ---');
+
+        CF.log(['Multi styled ', 'log ', 'output.'], ['color: red', 'color: white', 'color: lime']);
+        CF.warn(['Multi styled ', 'warning ', 'output.'], ['color: red', 'color: orange', 'color: lime']);
+        CF.error(['Multi styled ', 'error ', 'output.'], ['color: red', 'color: red', 'color: lime']);
+        CF.info(['Multi styled ', 'info ', 'output.'], ['color: red', 'color: skyblue', 'color: lime']);
+        CF.debug(['Multi styled ', 'debug ', 'output.'], ['color: red', 'color: yellow', 'color: lime']);
+
+        CF.log(['Example', 'badge and message ', 'with multi styled text.'], [CF.getBadgeStyle('pink'), 'color: deeppink; margin-left: 0.5rem', 'color: lime']);
+        CF.warn(['Example', 'badge and message ', 'with multi styled text.'], [CF.getBadgeStyle('pink'), 'color: deeppink; margin-left: 0.5rem', 'color: lime']);
+        CF.error(['Example', 'badge and message ', 'with multi styled text.'], [CF.getBadgeStyle('pink'), 'color: deeppink; margin-left: 0.5rem', 'color: lime']);
+
+        // -------------
+        // custom badges
+        console.log('');
+        console.log('--- Customized Badges ---');
+
+        CF.badgeCustom('CUSTOM', 'A fully customized badge with a message', 'color: white; background-color: tomato; font-weight: bold; padding: 0 0.5rem; border-radius: 0.25rem; border: 1px solid white');
+        CF.badgeCustomQuick('CUSTOM QUICK', 'A default badge with custom color and background-color', 'darkviolet', 'lavender');
+        CF.badgeCustomQuick('CUSTOM QUICK', 'A default badge with custom color and background-color and extra CSS', 'darkviolet', 'lavender', 'border-inline: 4px solid darkviolet');
+
+        // -----------------
+        // contextual badges
+        console.log('');
+        console.log('--- Default Contextual Badges ---');
+
+        CF.badgeError('ERROR', 'For catching exceptions');
+        CF.badgeBlame('BLAME', 'Dev or 3rd party wrote faulty code');
+        CF.badgeAlert('ALERT', 'Dev sees a (possible) problem and can\'t or won\'t preemptively fix it.\nFor use with interrupting program execution, to obtain more input from the user.');
+        CF.badgeUserError('USER ERROR', 'The user is doing something incorrectly');
+        CF.badgeWarn('WARNING', 'Used to notify the user that Dev saw a (possible) problem, preemptively "fixed it",\nand it is possible/likely that data/calculations/output/etc. may not progress as desired or come out as intended.');
+        CF.badgeUndefined('UNDEFINED', 'A query was made on an undefined object');
+        CF.badgeDebug('DEBUG', 'For use with console.debug()');
+        CF.badgeEmpty('EMPTY', 'A query returned null, "", or 0');
+        CF.badge('LABEL', 'Default badge with message');
+        CF.badgeFail('FAIL', 'A test case did not pass');
+        CF.badgeMistake('MISTAKE', 'A test case is a non-sequitur');
+        CF.badgeInconclusive('INCONCLUSIVE', 'A test case was unable to be validated, e.g. hung process, not enough data, etc');
+        CF.badgeSuccess('SUCCESS', 'A test case passed');
+        CF.badgeInfo('INFO', 'For describing a local detail or circumstance');
+        CF.badgeNote('NOTE', 'For adding contextual tangential information. E.g. "For more information see someLink"');
+        CF.badgeSuggestion('SUGGESTION', 'Advice or instructions for the user from the dev');
+        CF.badgeTodo('TO DO', 'Reminder for the Dev to finish something');
+
+        // --------------
+        // colored badges
+        console.log('');
+        console.log('--- Default Colored Badges ---');
+
+        CF.badge('Black', 'Badge with solid black background', 'black');
+        CF.badge('Gray', 'Badge with solid gray background', 'gray');
+        CF.badge('White', 'Badge with solid white background', 'white');
+        CF.badge('Red', 'Badge with solid red background', 'red');
+        CF.badge('Orange', 'Badge with solid orange background', 'orange');
+        CF.badge('Yellow', 'Badge with solid yellow background', 'yellow');
+        CF.badge('Lime', 'Badge with solid lime background', 'lime');
+        CF.badge('Green', 'Badge with solid green background', 'green');
+        CF.badge('Cyan', 'Badge with solid cyan background', 'cyan');
+        CF.badge('Sky', 'Badge with solid deepskyblue background', 'sky');
+        CF.badge('Blue', 'Badge with solid blue background', 'blue');
+        CF.badge('Navy', 'Badge with solid navy background', 'navy');
+        CF.badge('Dusk', 'Badge with solid mediumslateblue background', 'dusk');
+        CF.badge('Indigo', 'Badge with solid indigo background', 'indigo');
+        CF.badge('Violet', 'Badge with solid violet background', 'violet');
+        CF.badge('Purple', 'Badge with solid purple background', 'purple');
+        CF.badge('Fuchsia', 'Badge with solid fuchsia background', 'fuchsia');
+        CF.badge('Pink', 'Badge with solid deeppink background', 'pink');
+	
+	</script>
+	
+</html>
