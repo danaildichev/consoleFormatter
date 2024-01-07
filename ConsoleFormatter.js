@@ -6,6 +6,11 @@ class ConsoleFormatter
     }
 
 
+    /**
+     * Used to set default styles upon construction.
+     *
+     * @return {Object} Contains groups of strings. CSS rules for formatted console messages
+     */
     getDefaultStyles()
     {
         return {
@@ -42,6 +47,7 @@ class ConsoleFormatter
 
                 // --------------
                 // colored badges
+
                 blank: '',
                 black: 'color: white; background-color: black;',
                 gray: 'color: white; background-color: #444;',
@@ -60,12 +66,21 @@ class ConsoleFormatter
                 violet: 'color: white; background-color: violet;',
                 purple: 'color: white; background-color: purple;',
                 fuchsia: 'color: white; background-color: fuchsia;',
-                pink: 'color: white; background-color: deeppink;',
+                pink: 'color: white; background-color: deeppink;'
+
+                // end colored badges
+                // ------------------
             }
         }
     }
 
 
+    /**
+     * Get the style of a particular badge type
+     *
+     * @param {String} type Which badge to get
+     * @return {string} A CSS rule
+     */
     getBadgeStyle(type)
     {
         return this.styles.badges[type] + ' border-radius: 0.5rem 1rem; font-weight: bold; padding: 0 0.5rem';
@@ -263,7 +278,7 @@ class ConsoleFormatter
 
 
     /**
-     * Calls getStyledOutput to build a console output string. Uses console.log().
+     * Calls getStyledOutput() to build a console output string. Uses console.log().
      *
      * @param {Array} values A list that will be used to build the output
      * @param {Array} styles A list of CSS rules that will be used to style the values
@@ -276,7 +291,7 @@ class ConsoleFormatter
     }
 
     /**
-     * Calls getStyledOutput to build a console output string. Uses console.warn().
+     * Calls getStyledOutput() to build a console output string. Uses console.warn().
      *
      * @param {Array} values A list that will be used to build the output
      * @param {Array} styles A list of CSS rules that will be used to style the values
@@ -289,7 +304,7 @@ class ConsoleFormatter
     }
 
     /**
-     * Calls getStyledOutput to build a console output string. Uses console.error().
+     * Calls getStyledOutput() to build a console output string. Uses console.error().
      *
      * @param {Array} values A list that will be used to build the output
      * @param {Array} styles A list of CSS rules that will be used to style the values
@@ -302,7 +317,7 @@ class ConsoleFormatter
     }
 
     /**
-     * Calls getStyledOutput to build a console output string. Uses console.info().
+     * Calls getStyledOutput() to build a console output string. Uses console.info().
      *
      * @param {Array} values A list that will be used to build the output
      * @param {Array} styles A list of CSS rules that will be used to style the values
@@ -315,7 +330,7 @@ class ConsoleFormatter
     }
 
     /**
-     * Calls getStyledOutput to build a console output string. Uses console.debug().
+     * Calls getStyledOutput() to build a console output string. Uses console.debug().
      *
      * @param {Array} values A list that will be used to build the output
      * @param {Array} styles A list of CSS rules that will be used to style the values
@@ -362,8 +377,8 @@ class ConsoleFormatter
 
 
     /**
-     * Get one or more values as a styled string for console output.
-     * Handles array length mismatch error for values and styles with or without substitution flags in values.
+     * Creates an array from [values], [styles], and the optional parameters which can be spread into a console message
+     * Handles array length mismatch error for values and styles with or without substitution flags.
      *
      * @param {String} [preText] Optional. A string that can be prepended to the output. Default undefined.
      * @param {Array} values A list that will be used to build the output
