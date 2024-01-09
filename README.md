@@ -180,7 +180,11 @@ CF.badgeCustomQuick('CUSTOM 3', 'A default badge with custom color and backgroun
 
 ### Formatted Text
 
-**Formatted text using built-in extensions for console's `log()`, `warn()`, `error()`, `info()`, and `debug()` functions**
+How to use the built-in extensions for console's log(), warn(), error(), info(), and debug() functions
+
+<details>
+
+<summary>1. Default</summary>
 
 ```javascript
 /**
@@ -197,9 +201,11 @@ CF.debug(values, styles);
 CF.log(['Multi styled ', 'log ', 'output.'], ['color: red', 'color: white', 'color: lime']);
 ```
 
+</details>
 
+<details>
 
-**Formatted text with preformatted badges using built-in extensions for console's `log()`, `warn()`, `error()`, `info()`, and `debug()` functions**
+<summary>2. Default with preformatted badges</summary>
 
 ```javascript
 // it's the same as this:
@@ -217,9 +223,18 @@ CF.log(['Example', 'badge and message ', 'with multi styled text.'], [CF.getBadg
 // followed by the text, 'with multi styled text.', with lime font color
 ```
 
-**Formatted text with custom badges using built-in extensions for console's `log()`, `warn()`, `error()`, `info()`, and `debug()` functions**
+</details>
+
+<details>
+
+<summary>3. Default with custom badges</summary>
 
 There is more than one way to do this, but essentially you've just circled back to using `CF.log(values, styles)`.
+
+</details>
+
+
+
 
 ### Which CSS rules can I use?
 
