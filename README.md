@@ -110,9 +110,11 @@ CF.badgeSuccess('SUCCESS', 'A test case passed');
 
 </details>
 
+<details>
 
+<summary>2. Messages with a custom badge</summary>
 
-**2. Messages with a custom badge. There are 3 variations for a custom badge.**
+There are 3 variations for a custom badge.
 
 <details>
 
@@ -171,6 +173,8 @@ CF.badgeCustom(labelText, messageText, fontColor, backgroundColor, extraCSS);
 // e.g.
 CF.badgeCustomQuick('CUSTOM 3', 'A default badge with custom color and background-color and extra CSS', 'darkviolet', 'lavender', 'border-inline: 4px solid darkviolet');
 ```
+
+</details>
 
 </details>
 
