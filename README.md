@@ -350,7 +350,7 @@ console.log(...messageValues)
 // console.log('pre text%cone.%ctwo.%cthree?', 'color: red', 'color: yellow', 'color: lime', 'post text')
 ```
 
-### How to use getStyledOutput() to perform substitution
+### How to use `getStyledOutput()` to perform substitution
 
 You can use any valid substitution flags. Let's say you wanted to use digits. Include the digits in the 'styles' array.
 
@@ -458,7 +458,7 @@ CF.badgeTodo(labelText, messageText);
 
 </details>
 
-```javasccript
+```javascript
 CF.badge(labelText, messageText, color);
 ```
 
