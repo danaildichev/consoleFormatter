@@ -6,6 +6,27 @@ Opinionated extensions for console messages.
 
 Use the `ConsoleFormatter` JS class to easily log messages with custom or preformatted styles. See `index.html` or the live demo for examples.
 
+## Table of Contents
+
+- [Live Demo](#live-demo)
+- [Install](#install)
+- [Usage](#usage)
+    - [Badges](#badges)
+    - [Formatted Text](#formatted-text)
+    - [Which CSS rules can I use](#which-css-rules-can-i-use)
+    - [What about substitution](#what-about-substitution)
+    - [Using separation characters](#using-separation-characters)
+    - [Using the getStyledOutput() function](#uisng-the-getstyledoutput-function)
+    - [How to use getStyledOutput() to perform substitution](#how-to-use-getstyledoutput-to-perform-substitution)
+- [API](#api)
+    - [log(), warn(), error(), info(), and debug()](#log-warn-error-info-and-debug)
+    - [Custom Badges](#custom-badges)
+    - [Contextual Badges](#contextual-badges)
+    - [Colored Badges](#colored-badges)
+- [Issues](#issues)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Live Demo
 
 [https://danaildichev.net/portfolio/code-samples/console-formatter](https://danaildichev.net/portfolio/code-samples/console-formatter)
