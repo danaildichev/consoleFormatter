@@ -211,7 +211,7 @@ CF.log(['Example', 'badge and message ', 'with multi styled text.'], [CF.getBadg
 
 There is more than one way to do this, but essentially you've just circled back to using `CF.log(values, styles)`.
 
-## Which CSS rules can I use?
+### Which CSS rules can I use?
 
 You'll want to check the documentation for the browser(s) that you want to support, but for example MDN says that Firefox supports:
 
@@ -234,11 +234,11 @@ You'll want to check the documentation for the browser(s) that you want to suppo
 - word-spacing and word-break
 - writing-mode
 
-## What about substitution
+### What about substitution
 
 I actually did take the time to make the ConsoleFormatter support styled substitution. In my opinion you are better off handling that before passing in the `values` array of strings. Substitution can be handled using one of the ConsoleFormatter's lower level functions, `getStyledOutput()`. Let me show you a couple of details about the ConsoleFormatter class before we talk about using substitution.
 
-## Using separation characters
+### Using separation characters
 
 Let's take a look at the ConsoleFormatter's `log()` function:
 
@@ -308,7 +308,7 @@ console.log(...messageValues)
 console.log('pre text%cone.%ctwo.%cthree?', 'color: red', 'color: yellow', 'color: lime', 'post text')
 ```
 
-## How to use getStyledOutput() to perform substitution
+### How to use getStyledOutput() to perform substitution
 
 You can use any valid substitution flags. Let's say you wanted to use digits. Include the digits in the 'styles' array.
 
@@ -323,3 +323,112 @@ That would be the equivalent of
 ```javascript
 console.log('%ca: %d%c b: %d%c c: %d', 'color: red', 1, 'color: yellow', 2, 'color: lime', 3)
 ```
+
+## API
+
+### log(), warn(), error(), info(), and debug()
+
+```javascript
+CF.log(values, styles);
+CF.warn(values, styles);
+CF.error(values, styles);
+CF.info(values, styles);
+CF.debug(values, styles);
+```
+
+### Custom Badges
+
+```javasccript
+CF.badgeCustom(labelText, messageText, badgeStyle);
+CF.badgeCustomQuick(labelText, messageText, fontColor, backgroundColor);
+CF.badgeCustomQuick(labelText, messageText, fontColor, backgroundColor, extraCSS);
+```
+
+### Contextual Badges
+
+<details>
+
+<summary>Context</summary>
+
+- ERROR: For catching exceptions
+- BLAME: Dev or 3rd party wrote faulty code
+- ALERT: Dev sees a (possible) problem and can\'t or won\'t preemptively fix it. For use with interrupting program execution, to obtain more input from the user.
+- USER ERROR: The user is doing something incorrectly
+- WARNING: Used to notify the user that Dev saw a (possible) problem, preemptively "fixed it", and it is possible/likely that data/calculations/output/etc. may not progress as desired or come out as intended.
+- UNDEFINED: A query was made on an undefined object
+- DEBUG: For use with console.debug()
+- EMPTY: A query returned null, "", or 0
+- FAIL: A test case did not pass
+- MISTAKE: A test case is a non-sequitur
+- INCONCLUSIVE: A test case was unable to be validated, e.g. hung process, not enough data, etc
+- SUCCESS: A test case passed
+- INFO: For describing a local detail or circumstance
+- NOTE: For adding contextual tangential information. E.g. "For more information see someLink"
+- SUGGESTION: Advice or instructions for the user from the dev
+- TO DO: Reminder for the Dev to finish something
+
+</details>
+
+```javascript
+CF.badgeError(labelText, messageText);
+CF.badgeBlame(labelText, messageText);
+CF.badgeAlert(labelText, messageText);
+CF.badgeUserError(labelText, messageText);
+CF.badgeWarn(labelText, messageText);
+CF.badgeUndefined(labelText, messageText);
+CF.badgeDebug(labelText, messageText);
+CF.badgeEmpty(labelText, messageText);
+CF.badgeFail(labelText, messageText);
+CF.badgeMistake(labelText, messageText);
+CF.badgeInconclusive(labelText, messageText);
+CF.badgeSuccess(labelText, messageText);
+CF.badgeInfo(labelText, messageText);
+CF.badgeNote(labelText, messageText);
+CF.badgeSuggestion(labelText, messageText);
+CF.badgeTodo(labelText, messageText);
+```
+
+
+
+### Colored Badges
+
+<details>
+
+<summary>Colors</summary>
+
+- black
+- gray
+- white
+- violet
+- fuchsia
+- pink
+- red
+- orange
+- yellow
+- lime
+- green
+- cyan
+- sky
+- blue
+- navy
+- dusk
+- indigo
+- purple
+
+</details>
+
+```javasccript
+CF.badge(labelText, messageText, color);
+```
+
+## Issues
+
+Open an issue or hit me up.
+
+## Contributing
+
+PRs accepted.
+
+## License
+
+GPL-3.0
