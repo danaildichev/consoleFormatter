@@ -233,12 +233,13 @@ There is more than one way to do this, but essentially you've just circled back 
 
 </details>
 
-
-
-
 ### Which CSS rules can I use?
 
-You'll want to check the documentation for the browser(s) that you want to support, but for example MDN says that Firefox supports:
+You'll want to check the documentation for the browser(s) that you want to support. MDN lists (for Firefox):
+
+<details>
+
+<summary>From MDN</summary>
 
 - background (and its longhand equivalents)
 - border (and its longhand equivalents)
@@ -258,6 +259,8 @@ You'll want to check the documentation for the browser(s) that you want to suppo
 - white-space
 - word-spacing and word-break
 - writing-mode
+
+</details>
 
 ### What about substitution
 
