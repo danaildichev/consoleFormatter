@@ -25,7 +25,9 @@ Get a copy of `ConsoleFormatter.js` and create a new instance of the class
 
 ### Badges
 
-**1. Messages with a preformatted badge**
+<details>
+
+<summary>1. Messages with a preformatted badge</summary>
 
 ```javascript
 // this will log a message with a green badge
@@ -105,6 +107,10 @@ Contextual badges have a corresponding function, for example:
 // the message will be: A test case passed
 CF.badgeSuccess('SUCCESS', 'A test case passed');
 ```
+
+</details>
+
+
 
 **2. Messages with a custom badge. There are 3 variations for a custom badge.**
 
