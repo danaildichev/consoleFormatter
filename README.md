@@ -268,7 +268,19 @@ I actually did take the time to make the ConsoleFormatter support styled substit
 
 ### Using separation characters
 
-Let's take a look at the ConsoleFormatter's `log()` function:
+You can pass in separator and ending chars for each item in the `values` array like so:
+
+```javascript
+CF.log(['one', 'two', 'three'], ['color: red', 'color: yellow', 'color: lime'], '.', '?');
+```
+
+This will log `one.two.three?` where in 'one.', 'two.', and 'three?' are formatted with red, yellow, and lime font color respectively.
+
+**It's up to you to decide how you want to handle white-space characters.**
+
+<details>
+
+<summary>Take a deeper look at the ConsoleFormatter's `log()` function</summary>
 
 ```javascript
 /**
@@ -285,15 +297,15 @@ log(values, styles, separatorChars = '', endChars = '')
 }
 ```
 
-You can pass in separator and ending chars for each item in the `values` array like so:
+</details>
 
-```javascript
-CF.log(['one', 'two', 'three'], ['color: red', 'color: yellow', 'color: lime'], '.', '?');
-```
+### Using the `getStyledOutput()` function
 
-This will log `one.two.three?` where in 'one.', 'two.', and 'three?' are formatted with red, yellow, and lime font color respectively. **It's up to you to decide how you want to handle white-space characters.**
+The `getStyledOutput()` function is the heart of the ConsoleFormatter class.
 
-The `getStyledOutput()` function is the heart of the ConsoleFormatter class. Let's take a look at its signature:
+<details>
+
+<summary>Signature for the `getStyledOutput()` function</summary>
 
 ```javascript
 /**
@@ -320,6 +332,8 @@ getStyledOutput(
     valuesIncludeSubstitutions = false
 )
 ```
+
+</details>
 
 You can use it like so:
 
