@@ -341,13 +341,13 @@ You can use it like so:
 const messageValues = CF.getStyledOutput('pre text', ['one', 'two', 'three'], '.', '?', ['color: red', 'color: yellow', 'color: lime'], 'post text', false)
 
 // messageValues would be
-['pre text%cone.%ctwo.%cthree?', 'color: red', 'color: yellow', 'color: lime', 'post text']
+// ['pre text%cone.%ctwo.%cthree?', 'color: red', 'color: yellow', 'color: lime', 'post text']
 
 // and then you can log it with
 console.log(...messageValues)
 
 // that's the equivalent of
-console.log('pre text%cone.%ctwo.%cthree?', 'color: red', 'color: yellow', 'color: lime', 'post text')
+// console.log('pre text%cone.%ctwo.%cthree?', 'color: red', 'color: yellow', 'color: lime', 'post text')
 ```
 
 ### How to use getStyledOutput() to perform substitution
@@ -360,10 +360,9 @@ console.log(...CF.getStyledOutput(undefined, ['a: %d', ' b: %d', ' c: %d'], '', 
 
 That would log `a: 1 b: 2 c: 3` to the console where in 'a: 1', ' b: 2', and ' c: 3' are formatted with red, yellow, and lime font color respectively.
 
-That would be the equivalent of
-
 ```javascript
-console.log('%ca: %d%c b: %d%c c: %d', 'color: red', 1, 'color: yellow', 2, 'color: lime', 3)
+// That would be the equivalent of
+// console.log('%ca: %d%c b: %d%c c: %d', 'color: red', 1, 'color: yellow', 2, 'color: lime', 3)
 ```
 
 ## API
@@ -380,7 +379,7 @@ CF.debug(values, styles);
 
 ### Custom Badges
 
-```javasccript
+```javascript
 CF.badgeCustom(labelText, messageText, badgeStyle);
 CF.badgeCustomQuick(labelText, messageText, fontColor, backgroundColor);
 CF.badgeCustomQuick(labelText, messageText, fontColor, backgroundColor, extraCSS);
