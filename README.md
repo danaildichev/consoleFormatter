@@ -180,7 +180,7 @@ CF.badgeCustomQuick('CUSTOM 3', 'A default badge with custom color and backgroun
 
 ### Formatted Text
 
-How to use the built-in extensions for console's log(), warn(), error(), info(), and debug() functions
+How to use the built-in extensions for console's `log()`, `warn()`, `error()`, `info()`, and `debug()` functions
 
 <details>
 
