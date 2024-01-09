@@ -241,24 +241,24 @@ You'll want to check the documentation for the browser(s) that you want to suppo
 
 <summary>From MDN</summary>
 
-- background (and its longhand equivalents)
-- border (and its longhand equivalents)
-- border-radius
-- box-decoration-break
-- box-shadow
-- clear and float
-- color
-- cursor
-- display
-- font (and its longhand equivalents)
-- line-height
-- margin
-- outline (and its longhand equivalents)
-- padding
-- text-* (properties such as text-transform)
-- white-space
-- word-spacing and word-break
-- writing-mode
+- `background` (and its longhand equivalents)
+- `border` (and its longhand equivalents)
+- `border-radius`
+- `box-decoration-break`
+- `box-shadow`
+- `clear` and `float`
+- `color`
+- `cursor`
+- `display`
+- `font` (and its longhand equivalents)
+- `line-height`
+- `margin`
+- `outline` (and its longhand equivalents)
+- `padding`
+- `text-*` (properties such as text-transform)
+- `white-space`
+- `word-spacing` and `word-break`
+- `writing-mode`
 
 </details>
 
